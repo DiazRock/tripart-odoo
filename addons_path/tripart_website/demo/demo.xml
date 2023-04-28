@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="olivia" model="tripart_website.artist">
+            <field name="name">Olivia Bolivia</field>
+        </record>
+        <record id="bea" model="tripart_website.artist">
+            <field name="name">Beatriz Flowers</field>
+        </record>
+        <record id="fuikty" model="tripart_website.artist">
+            <field name="name">Fuikity Babity Boom</field>
+        </record>
+        <record id="llorca" model="tripart_website.artist">
+            <field name="name">Miguel Llorcaneon</field>
+        </record>
+        <record id="lorena" model="tripart_website.artist">
+            <field name="name">Lorena Flow</field>
+        </record>
+    </data>
+</odoo>

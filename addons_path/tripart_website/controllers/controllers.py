@@ -10,12 +10,12 @@ class TripartWebsite(http.Controller):
             'artists': Artist.search([]),
         })
 
-    @http.route('/tripart/artists/<name>', auth='public', website=True)
-    def index(self, name):
-        return '<h1>{}</h1>'.format(name)
+    # @http.route('/tripart/artists/<name>', auth='public', website=True)
+    # def artist(self, name):
+    #     return '<h1>{}</h1>'.format(name)
 
     @http.route('/tripart/artists/<model("tripart_website.artist"):artist>', auth='public', website=True)
-    def index(self, artist):
+    def artist(self, artist):
         return http.request.render('tripart_website.biography', {
             'person': artist
         })

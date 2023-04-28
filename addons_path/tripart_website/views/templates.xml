@@ -6,8 +6,9 @@
         <div class="container">
             <t t-foreach="artists" t-as="artist">
               <p>
-                <a t-attf-href="/tripart/artist/{{ slug(artist) }}"/>
+                <a t-attf-href="/tripart/artists/{{ slug(artist) }}">
                 <t t-esc="artist.id"/><t t-esc="artist.name"/>
+                </a>
               </p>
             </t>
         </div>
@@ -20,8 +21,8 @@
         <div class="oe_structure"/>
         <div class="oe_structure">
             <div class="container">
-                <h3><t t-field="person.name"/></h3>
-                <div><t t-field="person.biography"/></div>
+                <h3 t-field="person.name"></h3>
+                <div t-field="person.biography"></div>
             </div>
         </div>
         <div class="oe_structure"/>

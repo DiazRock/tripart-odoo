@@ -3,12 +3,10 @@ from odoo import http
 
 
 class TripartWebsite(http.Controller):
-    @http.route('/tripart/artists', auth='public', website=True)
+    @http.route('/tripart/artists', auth="public", type="json", methods=['POST'])
     def tripart_artists(self, **kw):
         Artist = http.request.env['tripart_website.artist']
-        return http.request.render('tripart_website.index', {
-            'artists': Artist.search([]),
-        })
+        return Artist.search_read([], Artist.fields_get_keys())
 
     # @http.route('/tripart/artists/<name>', auth='public', website=True)
     # def artist(self, name):

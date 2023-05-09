@@ -5,15 +5,28 @@
         </record>
         <record id="bea" model="tripart_website.artist">
             <field name="name">Beatriz Flowers</field>
+            <!-- <field name="profile_pic"
+                   
+                   /> -->
+
         </record>
         <record id="fuikty" model="tripart_website.artist">
             <field name="name">Fuikity Babity Boom</field>
+            <!-- <field name="profile_pic"
+                   
+                   /> -->
         </record>
         <record id="llorca" model="tripart_website.artist">
             <field name="name">Miguel Llorcaneon</field>
+            <!-- <field name="profile_pic"
+                   
+                   /> -->
         </record>
         <record id="lorena" model="tripart_website.artist">
             <field name="name">Lorena Flow</field>
+            <!-- <field name="profile_pic"
+                   
+                   /> -->
         </record>
     </data>
 </odoo>

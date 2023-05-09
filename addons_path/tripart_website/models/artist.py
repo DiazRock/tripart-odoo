@@ -8,6 +8,7 @@ class Artist(models.Model):
 
     name = fields.Char()
     biography = fields.Html()
+    profile_pic = fields.Image(string = "Profile pic")
 
 
     

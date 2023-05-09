@@ -1,5 +1,4 @@
 <odoo>
-  <data>
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="tripart_website.list">
@@ -16,13 +15,20 @@
 -->
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="tripart_website.action_window">
       <field name="name">tripartWebsite window</field>
-      <field name="res_model">tripart_website.tripart_website</field>
+      <field name="res_model">tripart_website.artist</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
+    <menuitem
+        id="tripart_website_action_menu"
+        name="Artist"
+        parent="tripart_website_menu"
+        action="tripart_website.action_window"
+        sequence="10"
+        />
 
     <!-- server action to the one above -->
 <!--
@@ -56,5 +62,4 @@
     <menuitem name="Server to list" id="tripart_website" parent="tripart_website.menu_2"
               action="tripart_website.action_server"/>
 -->
-  </data>
 </odoo>

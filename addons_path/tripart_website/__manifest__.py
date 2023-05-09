@@ -25,12 +25,20 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
         'views/templates.xml',
+        'views/views.xml',
+        'views/snippets/get_artist.xml',
+        'views/snippets/snippets.xml',
         'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         #'demo/demo.xml',
     ],
+    'assets': {
+        'web.assets_frontend': [
+            'tripart_website/static/src/js/get-artist.js',
+            'tripart_website/static/src/js/get-artist-options.js'
+        ]
+    }
 }

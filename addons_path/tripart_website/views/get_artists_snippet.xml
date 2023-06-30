@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="index">
+    <!-- <t t-call="website.layout">
+      <t t-set="title">Tripart</t>
+      <div class="oe_structure">
+        <div class="container get_aritst">
+            <t t-foreach="artists" t-as="artist">
+              <p>
+                <a t-attf-href="/tripart/artists/{{ slug(artist) }}">
+                <t t-esc="artist.id" id="artist-id"/><t t-esc="artist.name" id="artist-name"/>
+                </a>
+              </p>
+            </t>
+        </div>
+      </div>
+    </t> -->
+  </template>
+  <!-- <template id="biography">
+      <t t-call="website.layout">
+          <t t-set="title">Tripart</t>
+          <div class="oe_structure"/>
+          <div class="oe_structure">
+              <div class="container">
+                  <h3 t-field="person.name"></h3>
+                  <div t-field="person.biography"></div>
+              </div>
+          </div>
+          <div class="oe_structure"/>
+      </t>
+  </template> -->
+  <template id="external_snippets" inherit_id="website.snippets" priority="8">
+      <xpath 
+        expr="//div[@id='snippet_effect']//t[@t-snippet][last()]" 
+        position="after">
+        <div class="snippet_structure" class= "o_panel">
+          <div class="o_panel_header">
+            TripartSnippets
+          </div>
+          <t t-snippet="tripart_website.index"/>
+        </div>
+          
+      </xpath>
+  </template>
+</odoo>

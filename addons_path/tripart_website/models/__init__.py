@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import models, artist
+from . import models, artist, artwork

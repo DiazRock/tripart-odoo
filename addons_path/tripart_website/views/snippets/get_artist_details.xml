@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="get-artist-details" name="Get Artist - Dynamic">
+        <section class="s_media_list pb32 o_cc o_cc5 o_colored_level pt0">
+            <div class="container" id="tw-artist-row-details">
+            </div>
+        </section>
+    </template>
+</odoo>

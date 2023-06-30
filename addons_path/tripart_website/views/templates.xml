@@ -15,7 +15,7 @@
       </div>
     </t>
   </template>
-  <template id="biography">
+  <template id="artist-details">
     <t t-call="website.layout">
         <t t-set="title">Tripart</t>
         <div class="oe_structure"/>

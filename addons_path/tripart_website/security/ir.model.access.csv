@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_tripart_website_tripart_website,tripart_website.tripart_website,model_tripart_website_tripart_website,base.group_user,1,1,1,1
 access_tripart_website_artist,tripart_website.artist,model_tripart_website_artist,base.group_user,1,1,1,1
+access_tripart_website_artwork,tripart_website.artwork,model_tripart_website_artwork,base.group_user,1,1,1,1

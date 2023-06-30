@@ -13,6 +13,10 @@
                         t-snippet="tripart_website.get-artist" >
                         <keywords>explore, artist</keywords>
                     </t>
+                    <t 
+                        t-snippet="tripart_website.get-artist-details" >
+                        <keywords>know, artist</keywords>
+                    </t>
                 </div>
             </div>
         </xpath>

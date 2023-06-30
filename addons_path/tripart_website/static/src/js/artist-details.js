@@ -3,13 +3,15 @@
 import publicWidget from 'web.public.widget';
 
 publicWidget.registry.getArtist = publicWidget.Widget.extend({
-    selector: '.get-artist',
+    selector: '.get-artist-details',
     start() {
-        let artistRow = this.el.querySelector('#tw-artist-row')
-        if (artistRow){
+        const artistRowDetails = this.el.querySelector('#tw-artist-row-details')
+        if (artistRowDetails) {
             this._rpc({
-                route: '/tripart/artists/',
-                params:{}
+                route: '/tripart/artist-detail-and-work/',
+                params:{
+                    artist_id: `${artistRowDetails.innerHTML}`
+                }
             }).then(data=>{
                 let html = `<div class="col-lg-12 s_media_list_item pt16 pb16" data-name="Media item"><div class="row s_nb_column_fixed s_col_no_bgcolor">`
                 data.forEach((artist, index)=>{
@@ -21,15 +23,14 @@ publicWidget.registry.getArtist = publicWidget.Widget.extend({
                             <div class="s_media_list_body col-lg-6">
                                 <h3 class="o_default_snippet_text">${artist.name}</h3>
                                 <p class="o_default_snippet_text">${artist.biography}</p>
-                                <a t-attf-href="/tripart/artists/${artist.id}" class="btn btn-primary mb-2 o_default_snippet_text">Take a look!</a>
+                                <a href="#" class="btn btn-primary mb-2 o_default_snippet_text">Take a look!</a>
                             </div>
                         </div>
                     </div>`
                 })
                 html += `</div></div>`
-                artistRow.innerHTML = html
+                artistRowDetails.innerHTML = html
             }).catch(err => console.log(err))
-        
         }
     },
 });

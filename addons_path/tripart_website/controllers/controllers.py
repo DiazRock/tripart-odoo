@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-
+import json
 
 class TripartWebsite(http.Controller):
     @http.route('/tripart/artists', auth="public", type="json", methods=['POST'])
@@ -8,15 +8,27 @@ class TripartWebsite(http.Controller):
         Artist = http.request.env['tripart_website.artist']
         return Artist.search_read([], Artist.fields_get_keys())
 
-    # @http.route('/tripart/artists/<name>', auth='public', website=True)
-    # def artist(self, name):
-    #     return '<h1>{}</h1>'.format(name)
+    @http.route('/tripart/artist-detail-and-work',
+                auth='public',
+                type="json",
+                methods=['POST'])
+    def artist_detail_and_work(self, **kw):
+        Artist = http.request.env['tripart_website.artist']
+        Artwork = http.request.env['tripart_website.artwork']
+        response = Artist.search_read([kw['artist_id']], Artist.fields_get_keys())
+        response['artwork_ids'] = Artwork.search_and_read([artwork_id for artwork_id in response['artwork_ids']], Artwork.fields_fields())
+        return json.dumps(response) 
 
-    @http.route('/tripart/artists/<model("tripart_website.artist"):artist>', auth='public', website=True)
+    @http.route('/tripart/artists/<model("tripart_website.artist"):artist>',
+                auth='public', website=True)
     def artist(self, artist):
-        return http.request.render('tripart_website.biography', {
-            'person': artist
-        })
+        Artist = http.request.env['tripart_website.artist']
+        Artwork = http.request.env['tripart_website.artwork']
+        response = Artist.search_read(artist, Artist.fields_get_keys())
+        response['artwork_ids'] = Artwork.search_and_read(
+                                [artwork_id for artwork_id in response['artwork_ids']],
+                                Artwork.fields_fields())
+        return json.dumps(response)
 
     @http.route('/tripart_website/tripart_website/objects', auth='public')
     def list(self, **kw):
